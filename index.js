@@ -1,4 +1,7 @@
 const startBtn = document.getElementById("start-btn");
+const messageEl = document.getElementById("message-el");
+const sumEl = document.getElementById("sum-el");
+const cardsEl = document.getElementById("cards-el");
 
 let firstCard = Math.floor(Math.random() * (12 - 2) + 2);
 let secondCard = Math.floor(Math.random() * (12 - 2) + 2);
@@ -10,17 +13,19 @@ let message = "";
 
 
 function startGame() {
+    sumEl.textContent = `Sum: ${sum}`;
+    cardsEl.textContent = `Cards: ${firstCard} + ${secondCard}`;
     if (sum <= 20) {
-        message = "Do you want to draw a new card? 🙂";
+        message = "Do you want to draw a new card?";
     } else if (sum === 21) {
-        message = "Yeaaah! You've got Blackjack! 🥳";
+        message = "Yeaaah! You've got Blackjack!";
         hasBlackJack = true;
     } else {
         isAlive = false;
-        message ="You're out of the game! 😭";
+        message ="You're out of the game!";
     }
 
-    console.log(message);
+    messageEl.textContent = message;
 }
 
 startBtn.addEventListener("click", startGame)
