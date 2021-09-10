@@ -2,6 +2,7 @@ const startBtn = document.getElementById("start-btn");
 const messageEl = document.getElementById("message-el");
 const sumEl = document.getElementById("sum-el");
 const cardsEl = document.getElementById("cards-el");
+const newBtn = document.getElementById("new-btn"); 
 
 let firstCard = Math.floor(Math.random() * (12 - 2) + 2);
 let secondCard = Math.floor(Math.random() * (12 - 2) + 2);
@@ -28,6 +29,14 @@ function startGame() {
     messageEl.textContent = message;
 }
 
-startBtn.addEventListener("click", startGame)
+function newCard() {
+    let newCard = Math.floor(Math.random() * (12 - 2) + 2);
+    sum +=  newCard;
+    cardsEl.textContent += newCard;
+    startGame();
+}
+
+startBtn.addEventListener("click", startGame);
+newBtn.addEventListener("click", newCard);
  
 
