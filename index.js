@@ -1,3 +1,8 @@
+let player = {
+    name: "Lucia",
+    chips: 200
+}
+
 const startBtn = document.getElementById("start-btn");
 const messageEl = document.getElementById("message-el");
 const sumEl = document.getElementById("sum-el");
@@ -5,16 +10,11 @@ const cardsEl = document.getElementById("cards-el");
 const newBtn = document.getElementById("new-btn"); 
 const playerEl = document.getElementById("player-el");
 
-let cards = []
+let cards = [];
 let sum = 0;
 let hasBlackJack = false;
 let isAlive =  false;
 let message = "";
-
-let player = {
-    name: "Lucia",
-    chips: 145
-}
 
 playerEl.textContent = `${player.name}: $${player.chips}`;
 
@@ -69,5 +69,3 @@ function newCard() {
 
 startBtn.addEventListener("click", startGame);
 newBtn.addEventListener("click", newCard);
- 
-
